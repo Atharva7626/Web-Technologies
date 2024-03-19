@@ -1,0 +1,23 @@
+ItemName
+{
+    color: red;
+    /* font-family: 'copperplate Gothic Light'; */
+    font-size: 16pt;
+    font: bold;
+}
+ItemPrice
+{
+    color: yellow;
+    /* font-family: ; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+    font: bold;
+}
+Quantity
+{
+    color: yellow;
+    /* font-family: Arial; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font: bold;
+}
