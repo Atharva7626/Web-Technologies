@@ -1,48 +1,13 @@
 <?php
 
-session_start();
-$_SESSION['cnt']=0;
-$nm=$_POST['us'];
-$pass=$_POST['p'];
+$xml=simplexml_load_file("bookinfo.xml");
 
-if ($nm ==$pass)
-{
-    echo"Welcome";
+foreach($xml->book as $bk){
+    echo"<br> Book no: ".$bk->bookno."<br>";
+    echo"<br> Book name: ".$bk->bookname."<br>";
+    echo"<br> Book's Author: ".$bk->authorname."<br>";
+    echo"<br> Book's price : ".$bk->price."<br>";
+    echo"<br> Book release year : ".$bk->year."<br>";
 }
- else{
-
-    $_SESSION['cnt']++;
-    echo"Its your attempt :  ".$_SESSION['cnt'];
-    //sleep(12);  
-    
-    /*
-    
-    if ($_SESSION['cnt']==3){
-        die("Its tour last attempt");
-
-    }
-    */
-    
-    $cnt = isset($_SESSION['cnt']) ? $_SESSION['cnt'] : 0;
-        echo"Its your ".$cnt." try";
-         $cnt++; 
-    
-        if ($cnt >3)
-        {
-             echo "<br> Error ...Too many unsuccessful attempts<br>";
-             header("Location:b1.html");
-             session_destroy();
-        
-        }
-        else
-        {
-           $_SESSION['attempt']=$cnt;
-           
-        
-        }
-
-
- }
-
 
 ?>
